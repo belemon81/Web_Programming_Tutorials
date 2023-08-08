@@ -1,0 +1,61 @@
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px;
+        margin: 2px;
+    }
+
+    #add {
+        background-color: yellow;
+    }
+
+    #delete {
+        background-color: red;
+    }
+
+    #edit {
+        background-color: aqua;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    form {
+        display: inline-block;
+    }
+</style>
+
+<h1>All Flashcards</h1>
+
+<button id="add"><a href="/admin/words/create">Add new flashcard</a></button>
+<table>
+    <tr>
+        <th>_id</th>
+        <th>word</th>
+        <th>definition</th>
+        <th>action</th>
+    </tr> 
+
+    {{#each docs}}
+    <tr>
+        <td>{{this._id}}</td>
+        <td>{{this.word}}</td>
+        <td>{{this.definition}}</td>
+        <td>
+            <form action="/admin/words/{{this._id}}/edit" method="POST">
+            <button id="edit">Edit</button></form>
+            <form action="/admin/words/{{this._id}}/delete" method="POST">
+            <button id="delete">Delete</button></form>
+        </td>
+    </tr>
+    {{/each}}
+</table>

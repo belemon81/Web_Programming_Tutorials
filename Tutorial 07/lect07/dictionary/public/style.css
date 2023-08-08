@@ -1,0 +1,7 @@
+#result p {
+    margin-left: 25px;
+}
+
+.hidden {
+    display: none !important;
+}

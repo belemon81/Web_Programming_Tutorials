@@ -1,0 +1,38 @@
+<style>
+    #main {
+        width: 500px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form div {
+        margin: 15px 0;
+    }
+
+    form input {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+</style>
+<div id="main">
+    <h1>Add a new word</h1>
+    <form action="/admin/words" method="POST">
+        <div>
+            <label for="word">Word: </label>
+            <input type="text" name="word" id="word">
+        </div>
+
+        <div>
+            <label for="definition">Definition: </label>
+            <input type="text" name="definition" id="definition">
+        </div>
+
+        <div>
+            <input type="submit" value="Add">
+        </div>
+    </form>
+</div>

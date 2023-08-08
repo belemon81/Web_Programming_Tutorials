@@ -1,0 +1,33 @@
+body {
+    background-color: #d0e6df;
+    color: #777e8c;
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+/* ----------- Over here! ---------- */
+.hidden {
+    display: none !important;
+}
+/* ------------------ ------------------ */

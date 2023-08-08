@@ -1,0 +1,19 @@
+form {
+    margin: 25px 0;
+    min-width: 350px;
+    text-align: right;
+}
+
+form .form-group {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+form input {
+    min-width: 200px;
+}
+
+.text-right {
+    text-align: right;
+}

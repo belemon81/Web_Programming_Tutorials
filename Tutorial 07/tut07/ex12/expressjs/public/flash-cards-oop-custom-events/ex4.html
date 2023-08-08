@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards: Add a new word</title>
+
+    <style>
+        #main {
+            width: 500px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form div {
+            margin: 15px 0;
+        }
+
+        form input {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="main">
+        <h1>Add a new word</h1>
+        <form action="https://wpr-quiz-api.herokuapp.com/words" method="POST" id="add_form">
+            <div>
+                <label for="add_word">Word: </label>
+                <input type="text" name="add_word" id="add_word">
+            </div>
+
+            <div>
+                <label for="add_definition">Definition: </label>
+                <input type="text" name="add_definition" id="add_definition">
+            </div>
+
+            <div>
+                <input type="submit" value="Add" id="add">
+            </div>
+        </form>
+        <h1>Update a word</h1>
+        <form action="https://wpr-quiz-api.herokuapp.com/words" method="PUT" id="update_form">
+            <div>
+                <label for="update_word">Word: </label>
+                <input type="text" name="update_word" id="update_word">
+            </div>
+
+            <div>
+                <label for="put_definition">Definition: </label>
+                <input type="text" name="update_definition" id="update_definition">
+            </div>
+
+            <div>
+                <input type="submit" value="Update" id="update">
+            </div>
+        </form>
+        <h1>Delete a word</h1>
+        <form action="https://wpr-quiz-api.herokuapp.com/words" method="DELETE" id="del_form">
+            <div>
+                <label for="del_word">Word: </label>
+                <input type="text" name="del_word" id="del_word">
+            </div>
+
+            <div>
+                <input type="submit" value="Delete" id="delete">
+            </div>
+        </form>
+    </div>
+
+    <script defer>
+        async function AddOnSubmit(event) {
+            event.preventDefault(); // prevent normal form submit
+            const word = document.querySelector('#add_word').value;
+            const definition = document.querySelector('#add_definition').value;
+
+            if (word && definition) {
+                const data = {
+                    word: word,
+                    definition: definition
+                };
+
+                // TODO: using fetch - alert success when added
+                const response = await fetch("https://wpr-quiz-api.herokuapp.com/words/", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (response.status === 201) {
+                    alert('Added successfully!');
+                } else {
+                    alert('Oops! Please try again.');
+                }
+            }
+        }
+
+        async function UpdateOnSubmit(event) {
+            event.preventDefault(); // prevent normal form submit
+            const word = document.querySelector('#update_word').value;
+            const definition = document.querySelector('#update_definition').value;
+            if (word && definition) {
+                const data = {
+                    word: word,
+                    definition: definition
+                };
+                // TODO: using fetch - alert success when added
+                const response = await fetch("https://wpr-quiz-api.herokuapp.com/words/" + data.word, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data),
+                });
+                if (response.status === 200) {
+                    alert('Updated successfully!');
+                } else {
+                    alert('Oops! Please try again.');
+                }
+            }
+        }
+
+        async function DeleteOnSubmit(event) {
+            event.preventDefault(); // prevent normal form submit
+            const word = document.querySelector('#del_word').value;
+            if (word) {
+                // TODO: using fetch - alert success when added
+                const response = await fetch("https://wpr-quiz-api.herokuapp.com/words/" + word, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log(response.status);
+                if (response.status === 204) {
+                    alert('Deleted successfully!');
+                } else {
+                    alert('Oops! Please try again.');
+                }
+            }
+        }
+
+        const add = document.querySelector('#add_form');
+        add.addEventListener('submit', AddOnSubmit);
+        const update = document.querySelector('#update_form');
+        update.addEventListener('submit', UpdateOnSubmit);
+        const del = document.querySelector('#del_form');
+        del.addEventListener('submit', DeleteOnSubmit);
+
+    </script>
+
+</body>
+
+</html>

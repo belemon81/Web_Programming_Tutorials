@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dictionary lookup</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/word-view.js" defer></script>
+    <script src="/js/search-view.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/main.js" defer></script>
+  </head>
+  <body>
+
+    <!-- View for the search page -->
+    <section id="main-view" class="hidden">
+      <h1>English dictionary</h1>
+
+      <form id="search">
+        Look up a word: <input type="text" id="word-input"/>
+        <input type="submit" value="Search!">
+      </form>
+
+      <hr />
+
+      <div id="results" class="hidden">
+        The definition of <a href="" id="word"></a> is:
+        <blockquote id="definition"></blockquote>
+        <hr />
+      </div>
+    </section>
+
+    <!-- View for a single word -->
+    <section id="word-view" class="hidden">
+      <h1></h1>
+      The definition of <strong id="wv-word"></strong> is:
+      <blockquote id="wv-def"></blockquote>
+    </section>
+
+  </body>
+</html>

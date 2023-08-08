@@ -1,0 +1,18 @@
+input {
+    padding: 10px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+input[type="submit"] {
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: #0ccac4;
+}
+
+label {
+    color: white;
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}

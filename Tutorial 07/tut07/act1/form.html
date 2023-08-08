@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://localhost:3000/words" method="GET" id="form-create">
+        <label for="word">Word: </label>
+        <input id="word" name="word" />
+        <label for="definition">Definition: </label>
+        <input id="definition" name="definition" />
+        <button type="submit">Submit</button>
+    </form>
+    <script defer>
+        function onSubmit(event) {
+            event.preventDefault();
+        }
+        const form = document.querySelector('#form-create');
+        form.addEventListener('submit', onSubmit);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+/**
+ TODO(you): Add CSS for the list that you create yourself!
+*/ 
+
+header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 500px;
+    position: relative;
+    background-image: url('https://gamek.mediacdn.vn/133514250583805952/2022/3/8/photo-1-16467169858531969228475.jpg');
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    font-weight: normal;
+    color: white;
+    text-shadow: 0 0 10px #000000, 0 0 10px #0000FF;
+    max-width: 780px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+article div {
+    text-align: center;
+    margin: -100px;
+    position: sticky;
+}
+
+article {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+}
+
+#profile {
+    width: 200px;
+    border-radius: 100%;
+    border: 3px solid white; 
+}
+
+#name {
+    margin-top: 100px; 
+    color: #027bde;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#state {
+    margin-top: 0;
+    font-style: italic; 
+    padding-bottom: 10px; 
+    border-bottom: solid 2px #606060;
+    display: inline-block;
+}
+
+
+h2 { 
+    padding-top: 60px; 
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px; 
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    margin-bottom: 0;
+}
+
+.heading {
+    width: 40px;
+    color: rgba(0, 61, 183, 0.481);    
+    position: absolute; 
+    text-align: right;
+    left: -40px;
+} 
+
+section {
+    width: 66.67%;
+    margin: auto; 
+    padding-left: 40px;
+    position: relative;
+}
+
+.img-content {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgb(0, 0, 0);
+    margin: 20px 0;
+}
+
+.author {
+    font-weight: bold;
+}
+
+a {
+    font-family: 'Roboto Slab', serif;
+    color: #493bdf;
+    margin-bottom: 20px;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

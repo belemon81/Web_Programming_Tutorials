@@ -1,0 +1,33 @@
+<style>
+    #main {
+        width: 500px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form div {
+        margin: 15px 0;
+    }
+
+    form input {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+</style>
+<div id="main">
+    <h1>Delete word</h1>
+    <form action="/admin/words/{{doc._id}}?method=delete" method="POST">
+        <div>
+            <label for="word">Word: </label>
+            <input type="text" name="word" id="word" readonly placeholder="{{doc.word}}" value = "{{doc.word}}">
+        </div>
+
+        <div>
+            <input type="submit" value="Delete">
+        </div>
+    </form>
+</div>
